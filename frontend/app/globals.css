@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 213 33% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 213 33% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 213 33% 15%;
+    --primary: 213 100% 27%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 43 52% 55%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 210 17% 96%;
+    --muted-foreground: 215 13% 45%;
+    --accent: 210 17% 96%;
+    --accent-foreground: 213 100% 27%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 213 100% 27%;
+    --radius: 0.5rem;
+
+    /* Baiterek Brand Colors */
+    --baiterek-blue: #003F87;
+    --baiterek-blue-light: #0056B8;
+    --baiterek-gold: #C8A951;
+    --baiterek-gold-light: #E8C96B;
+    --baiterek-gray: #F5F7FA;
+    --baiterek-text: #1A2332;
+  }
+
+  .dark {
+    --background: 213 33% 8%;
+    --foreground: 210 17% 96%;
+    --card: 213 33% 10%;
+    --card-foreground: 210 17% 96%;
+    --popover: 213 33% 10%;
+    --popover-foreground: 210 17% 96%;
+    --primary: 213 80% 55%;
+    --primary-foreground: 213 33% 8%;
+    --secondary: 43 52% 45%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 213 25% 18%;
+    --muted-foreground: 215 13% 65%;
+    --accent: 213 25% 18%;
+    --accent-foreground: 210 17% 96%;
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 213 25% 18%;
+    --input: 213 25% 18%;
+    --ring: 213 80% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  .baiterek-gradient {
+    background: linear-gradient(135deg, #003F87 0%, #0056B8 100%);
+  }
+  .baiterek-gold-gradient {
+    background: linear-gradient(135deg, #C8A951 0%, #E8C96B 100%);
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+[data-contrast="high"] {
+  --baiterek-blue: #000080;
+  --background: #000000;
+  --foreground: #FFFF00;
+  filter: contrast(150%);
+}
+[data-font-size="large"] { font-size: 120%; }
+[data-font-size="xlarge"] { font-size: 150%; }

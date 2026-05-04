@@ -51,3 +51,8 @@ firebase-debug.log
 firebase-debug.log.*
 firestore-debug.log
 ui-debug.log
+serviceAccountKey.json
+.env.local
+.env.example
+.env
+.env.*
